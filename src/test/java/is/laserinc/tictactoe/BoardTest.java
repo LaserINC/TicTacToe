@@ -30,7 +30,7 @@ public class BoardTest {
     }
 
     @Test
-    public void checkWinnerColumn_player2(){
+    public void checkWinnerColumnPlayer2(){
       // create test for this
     	TicTacToe t = new TicTacToe();
 		t.mark(2, 0, 0);
@@ -39,7 +39,7 @@ public class BoardTest {
 		assertTrue("tictactoe should return 'true'", t.check_win(2));
     }
     @Test
-    public void checkWinnerColumn_player2_2(){
+    public void checkWinnerColumnPlayer2_2(){
       // create test for this
     	TicTacToe t = new TicTacToe();
 		t.mark(2, 0, 0);

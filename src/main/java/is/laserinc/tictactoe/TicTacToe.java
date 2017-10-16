@@ -12,8 +12,8 @@ public class TicTacToe {
 		board[x][y] = player;
 	}
 
-	public boolean check_win(int player) {
-		boolean win_return = false;
+	public boolean checkWin(int player) {
+		boolean winReturn = false;
 		int value = player;
 		for(int counter = 0; counter<3; counter++) {
 			boolean win = true;
@@ -23,7 +23,7 @@ public class TicTacToe {
 				}
 			}
 			if(win) {
-				win_return = true;
+				winReturn = true;
 			}
 		}
 		for(int counter = 0; counter<3; counter++) {
@@ -34,11 +34,11 @@ public class TicTacToe {
 				}
 			}
 			if(win) {
-				win_return = true;
+				winReturn = true;
 			}
 		}
 		if(board[0][0] == value && board[1][1] == value && board[2][2] == value) {
-			win_return = true;
+			winReturn = true;
 		}
 		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
 			win_return = true;
