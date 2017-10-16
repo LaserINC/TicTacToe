@@ -6,15 +6,15 @@ public class TicTacToe {
 	public TicTacToe() {
 		board = new int[3][3];
 
-		board[0][0] = 1;
+		board[0][0] = 0;
 		board[0][1] = 1;
 		board[0][2] = 1;
 	}
 
 	public boolean check_win(int player) {
 		boolean win_return = false;
+		int value = player;
 		for(int counter = 0; counter<3; counter++) {
-			int value = player;
 			boolean win = true;
 			for(int i : board[counter]) {
 				if(i != value) {
@@ -24,6 +24,23 @@ public class TicTacToe {
 			if(win) {
 				win_return = true;
 			}
+		}
+		for(int counter = 0; counter<3; counter++) {
+			boolean win = true;
+			for(int i = 0; i<3; i++) {
+				if(board[i][counter] != value) {
+					win = false;
+				}
+			}
+			if(win) {
+				win_return = true;
+			}
+		}
+		if(board[0][0] == value && board[1][1] == value && board[2][2] == value) {
+			win_return = true;
+		}
+		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
+			win_return = true;
 		}
 		return win_return;
 	}
