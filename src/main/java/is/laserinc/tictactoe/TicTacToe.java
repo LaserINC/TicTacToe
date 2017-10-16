@@ -6,9 +6,10 @@ public class TicTacToe {
 	public TicTacToe() {
 		board = new int[3][3];
 
-		board[0][0] = 0;
-		board[0][1] = 1;
-		board[0][2] = 1;
+	}
+
+	public void mark(int player, int x, int y) {
+		board[x][y] = player;
 	}
 
 	public boolean check_win(int player) {
@@ -47,8 +48,8 @@ public class TicTacToe {
 
 	public static void main(String[] args) {
     // CODE HERE
-		TicTacToe t = new TicTacToe();
-		System.out.println(t.check_win(1));
+		//TicTacToe t = new TicTacToe();
+		//System.out.println(t.check_win(1));
 	}
 
 
