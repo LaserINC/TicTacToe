@@ -1,10 +1,11 @@
 package is.laserinc.tictactoe;
+import java.util.*;
 
 public class TicTacToe {
 
 	private int board[][];
 	private boolean winReturn = false;
-	char player;
+	char player = 'X';
 	int board_size = 3;
 
 	public TicTacToe() {
@@ -37,14 +38,16 @@ public class TicTacToe {
 		System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2] );
 	}
 
-	public void mark(int player, int x, int y) {
+	public void mark(char _player, int x, int y) {
 		board[x][y] = player;
 	}
 
-	public boolean checkWin(int player) {
+	public boolean checkWin(char _player) {
 		boolean winReturn = false;
-		int value = player;
-		for(int counter = 0; counter<3; counter++) {
+		char value = _player;
+
+		//lARETT TOPPUR
+		for(int counter = 0; counter < board_size; counter++) {
 			boolean win = true;
 			for(int i : board[counter]) {
 				if(i != value) {
@@ -55,9 +58,11 @@ public class TicTacToe {
 				winReturn = true;
 			}
 		}
-		for(int counter = 0; counter<3; counter++) {
+
+		//lARETT ROD
+		for(int counter = 0; counter < board_size; counter++) {
 			boolean win = true;
-			for(int i = 0; i<3; i++) {
+			for(int i = 0; i < board_size; i++) {
 				if(board[i][counter] != value) {
 					win = false;
 				}
@@ -66,9 +71,12 @@ public class TicTacToe {
 				winReturn = true;
 			}
 		}
+
+		//LODRETT TOP TO BOTTOM
 		if(board[0][0] == value && board[1][1] == value && board[2][2] == value) {
 			winReturn = true;
 		}
+		//LODRETT BOTTOM TO TOP
 		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
 			winReturn = true;
 		}
@@ -82,16 +90,18 @@ public class TicTacToe {
 		Game.FillBoard();
 		Game.PrintBoard();
 
-		Game.ChangePlayer('X');
-		Game.PrintPlayer();
+		//do {
+			System.out.println("PLAYER X Pick a number");
+			Scanner scanner = new Scanner(System.in);
+			if(scanner.hasNextInt() ) {
+				int number = scanner.nextInt();
+				Game.PrintBoard();
+			}
+			scanner.close();
+		//} while(!Game.checkWin(Game.player));
 
-		Game.ChangePlayer('Y');
-		Game.PrintPlayer();
-
-		Game.ChangePlayer('U');
-		Game.PrintPlayer();
-
-		//System.out.println(t.check_win(1));
+		//Game.ChangePlayer('X');
+		//Game.PrintPlayer();
 	}
 
 
