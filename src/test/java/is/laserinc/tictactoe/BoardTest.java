@@ -16,7 +16,7 @@ public class BoardTest {
 		t.mark(1, 0, 0);
 		t.mark(1, 0, 1);
 		t.mark(1, 0, 2);
-		assertTrue("board should return 'true'", t.checkWin(1));
+		assertTrue("board should return 'true'", t.check_win(1));
     }
 
     @Test
@@ -26,7 +26,7 @@ public class BoardTest {
 		t.mark(1, 0, 0);
 		t.mark(1, 1, 0);
 		t.mark(1, 2, 0);
-		assertTrue("board should return 'true'", t.checkWin(1));
+		assertTrue("board should return 'true'", t.check_win(1));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class BoardTest {
 		t.mark(2, 0, 0);
 		t.mark(2, 1, 0);
 		t.mark(2, 2, 0);
-		assertTrue("board should return 'true'", t.checkWin(2));
+		assertTrue("board should return 'true'", t.check_win(2));
     }
     @Test
     public void checkWinnerColumnPlayer2_2(){
@@ -45,7 +45,7 @@ public class BoardTest {
 		t.mark(2, 0, 0);
 		t.mark(2, 1, 0);
 		t.mark(2, 2, 0);
-		assertFalse("board should return 'false'", t.checkWin(1));
+		assertFalse("board should return 'false'", t.check_win(1));
     }
 
     @Test
@@ -55,7 +55,7 @@ public class BoardTest {
 		t.mark(1, 0, 0);
 		t.mark(1, 1, 1);
 		t.mark(1, 2, 2);
-		assertTrue("board should return 'true'", t.checkWin(1));
+		assertTrue("board should return 'true'", t.check_win(1));
     }
 
     // ADD MANY MORE TEST HERE

@@ -9,7 +9,13 @@ public class Board {
 	}
 
 	public Board(Board b) {
-		this.board = b.get_board();
+		board = new int[3][3];
+		for(int i=0; i<b.get_board().length; i++) {
+        	for(int j=0; j<b.get_board()[i].length; j++) {
+        		this.board[i][j] = b.get_board()[i][j];
+        	}
+        }
+		//System.arraycopy(b, 0, this.board, b.length);
 	}
 
 	public int[][] get_board() {
@@ -24,8 +30,8 @@ public class Board {
 		return false;
 	}
 
-	public boolean checkWin(int player) {
-		boolean winReturn = false;
+	public boolean check_win(int player) {
+		boolean win_return = false;
 		int value = player;
 		for(int counter = 0; counter<3; counter++) {
 			boolean win = true;
@@ -35,7 +41,7 @@ public class Board {
 				}
 			}
 			if(win) {
-				winReturn = true;
+				win_return = true;
 			}
 		}
 		for(int counter = 0; counter<3; counter++) {
@@ -46,11 +52,11 @@ public class Board {
 				}
 			}
 			if(win) {
-				winReturn = true;
+				win_return = true;
 			}
 		}
 		if(board[0][0] == value && board[1][1] == value && board[2][2] == value) {
-			winReturn = true;
+			win_return = true;
 		}
 		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
 			win_return = true;

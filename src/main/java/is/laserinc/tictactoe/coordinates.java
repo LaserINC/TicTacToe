@@ -1,7 +1,7 @@
 package is.laserinc.tictactoe;
 
 public class Coordinates {
-	int x, y;
+	private int x, y;
 	public Coordinates(int x, int y) {
 		this.x = x;
 		this.y = y;
