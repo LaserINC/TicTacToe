@@ -4,6 +4,7 @@ public class TicTacToe {
 
 	private int board[][];
 	private boolean winReturn = false;
+	char player;
 
 	public TicTacToe() {
 		board = new int[3][3];
@@ -46,12 +47,27 @@ public class TicTacToe {
 		}
 		return winReturn;
 	}
+	public void ChangePlayer(char player_type) {
+		player = player_type;
+	}
+
+	public void PrintPlayer(){
+		System.out.println("Player " + player + " turn: ");
+	}
 
 	public static void main(String[] args) {
     // CODE HERE
-		TicTacToe t = new TicTacToe();
+		TicTacToe Game = new TicTacToe();
+		Game.ChangePlayer('X');
+		Game.PrintPlayer();
+
+		Game.ChangePlayer('Y');
+		Game.PrintPlayer();
+
+		Game.ChangePlayer('U');
+		Game.PrintPlayer();
+
 		//System.out.println(t.check_win(1));
-		//System.out.println("program works");
 	}
 
 
