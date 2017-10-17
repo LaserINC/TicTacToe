@@ -17,49 +17,49 @@ public void switchPlayerTest(){
 public void checkWinnerRow(){
         // create test for this
         TicTacToe t = new TicTacToe();
-        t.mark(1, 0, 0);
-        t.mark(1, 0, 1);
-        t.mark(1, 0, 2);
-        assertTrue("tictactoe should return 'true'", t.checkWin(1));
+        t.mark('X', 0, 0);
+        t.mark('X', 0, 1);
+        t.mark('X', 0, 2);
+        assertTrue("tictactoe should return 'true'", t.checkWin('X'));
 }
 
 @Test
 public void checkWinnerColumn(){
         // create test for this
         TicTacToe t = new TicTacToe();
-        t.mark(1, 0, 0);
-        t.mark(1, 1, 0);
-        t.mark(1, 2, 0);
-        assertTrue("tictactoe should return 'true'", t.checkWin(1));
+        t.mark('X', 0, 0);
+        t.mark('X', 1, 0);
+        t.mark('X', 2, 0);
+        assertTrue("tictactoe should return 'true'", t.checkWin('X'));
 }
 
 @Test
 public void checkWinnerColumnPlayer2(){
         // create test for this
         TicTacToe t = new TicTacToe();
-        t.mark(2, 0, 0);
-        t.mark(2, 1, 0);
-        t.mark(2, 2, 0);
-        assertTrue("tictactoe should return 'true'", t.checkWin(2));
+        t.mark('O', 0, 0);
+        t.mark('O', 1, 0);
+        t.mark('O', 2, 0);
+        assertTrue("tictactoe should return 'true'", t.checkWin('X'));
 }
 @Test
 public void checkWinnerColumnPlayer2_2(){
         // create test for this
         TicTacToe t = new TicTacToe();
-        t.mark(2, 0, 0);
-        t.mark(2, 1, 0);
-        t.mark(2, 2, 0);
-        assertFalse("tictactoe should return 'false'", t.checkWin(1));
+        t.mark('O', 0, 0);
+        t.mark('O', 1, 0);
+        t.mark('O', 2, 0);
+        assertFalse("tictactoe should return 'false'", t.checkWin('O'));
 }
 
 @Test
 public void checkWinnerCross(){
         // create test for this
         TicTacToe t = new TicTacToe();
-        t.mark(1, 0, 0);
-        t.mark(1, 1, 1);
-        t.mark(1, 2, 2);
-        assertTrue("tictactoe should return 'true'", t.checkWin(1));
+        t.mark('X', 0, 0);
+        t.mark('X', 1, 1);
+        t.mark('X', 2, 2);
+        assertTrue("tictactoe should return 'true'", t.checkWin('X'));
 }
 
 // ADD MANY MORE TEST HERE
