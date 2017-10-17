@@ -1,11 +1,12 @@
 package is.laserinc.tictactoe;
 
 public class TicTacToe {
+
 	private int board[][];
+	private boolean winReturn = false;
 
 	public TicTacToe() {
 		board = new int[3][3];
-
 	}
 
 	public void mark(int player, int x, int y) {
@@ -41,15 +42,16 @@ public class TicTacToe {
 			winReturn = true;
 		}
 		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
-			win_return = true;
+			winReturn = true;
 		}
-		return win_return;
+		return winReturn;
 	}
 
 	public static void main(String[] args) {
     // CODE HERE
-		//TicTacToe t = new TicTacToe();
+		TicTacToe t = new TicTacToe();
 		//System.out.println(t.check_win(1));
+		//System.out.println("program works");
 	}
 
 
