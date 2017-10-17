@@ -1,4 +1,6 @@
+/*
 bool verification(string name){
+
 		Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
 		Matcher m = p.matcher(name);
 		boolean b = m.find();
@@ -34,3 +36,4 @@ public void nameToLong(){
 public void emptyName(){
 	assertEquals(FALSE, TicTacToe.verification(""));
 }
+*/
