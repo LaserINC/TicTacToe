@@ -7,7 +7,10 @@ public class BoardTest {
 
 @Test
 public void switchPlayerTest(){
-        // create test for this
+        // create test for this,
+        TicTacToe t = new TicTacToe();
+        t.ChangePlayer('X');
+        assertEquals("Value should be X", 'X', t.player);
 }
 
 @Test
