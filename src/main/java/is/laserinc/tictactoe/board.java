@@ -1,15 +1,20 @@
 package is.laserinc.tictactoe;
 
 public class Board {
-	private int board[][];
+	private char board[][];
 
 	public Board() {
-		board = new int[3][3];
+		board = new char[3][3];
+		for(int i=0; i<board.length; i++) {
+        	for(int j=0; j<board[i].length; j++) {
+        		board[i][j] = 'u';
+        	}
+        }
 
 	}
 
 	public Board(Board b) {
-		board = new int[3][3];
+		board = new char[3][3];
 		for(int i=0; i<b.get_board().length; i++) {
         	for(int j=0; j<b.get_board()[i].length; j++) {
         		this.board[i][j] = b.get_board()[i][j];
@@ -18,21 +23,31 @@ public class Board {
 		//System.arraycopy(b, 0, this.board, b.length);
 	}
 
-	public int[][] get_board() {
+	public char[][] get_board() {
 		return this.board;
 	}
 
-	public boolean mark(int player, int x, int y) {
-		if(board[x][y] == 0) {
+	public boolean mark(char player, int x, int y) {
+		if(board[x][y] == 'u') {
 			board[x][y] = player;
 			return true;
 		}
 		return false;
 	}
 
-	public boolean check_win(int player) {
+	public char check_win() {
+		char return_value = 'u';
+		if(check_win('x')) {
+			return_value = 'x';
+		} else if(check_win('o')) {
+			return_value = 'o';
+		}
+		return return_value;
+	}
+
+	public boolean check_win(char player) {
 		boolean win_return = false;
-		int value = player;
+		char value = player;
 		for(int counter = 0; counter<3; counter++) {
 			boolean win = true;
 			for(int i : board[counter]) {

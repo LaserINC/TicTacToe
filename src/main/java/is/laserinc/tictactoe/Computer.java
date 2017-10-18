@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.*;
 
 public class Computer {
-	private int player_num;
+	private char player_char;
 	private boolean smart;
 
 	public Computer(int player_num, boolean smart) {
-		this.player_num = player_num;
+		this.player_char = player_char;
 		this.smart = smart;
 	}
 
@@ -25,7 +25,7 @@ public class Computer {
 		while(!move_made) {
 			int move_x = ThreadLocalRandom.current().nextInt(0, 2 + 1);
 			int move_y = ThreadLocalRandom.current().nextInt(0, 2 + 1);
-			move_made = b.mark(this.player_num, move_x, move_y);
+			move_made = b.mark(this.player_char, move_x, move_y);
 			if(move_made) {
 				return new Coordinates(move_x, move_y);
 			}
@@ -49,8 +49,8 @@ public class Computer {
 					} else {
 						new_state = new state(new Board(s.get_board()), s.get_cord());
 					}
-					boolean move_made = new_state.get_board().mark(this.player_num, i, j);
-					if(new_state.get_board().check_win(this.player_num)) {
+					boolean move_made = new_state.get_board().mark(this.player_char, i, j);
+					if(new_state.get_board().check_win(this.player_char)) {
 						win = true;
 						return new_state.get_cord();
 					}

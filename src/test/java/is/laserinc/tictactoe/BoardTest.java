@@ -13,49 +13,49 @@ public class BoardTest {
     public void checkWinnerRow(){
       // create test for this
     	Board t = new Board();
-		t.mark(1, 0, 0);
-		t.mark(1, 0, 1);
-		t.mark(1, 0, 2);
-		assertTrue("board should return 'true'", t.check_win(1));
+		t.mark('x', 0, 0);
+		t.mark('x', 0, 1);
+		t.mark('x', 0, 2);
+		assertTrue("board should return 'true'", t.check_win('x'));
     }
 
     @Test
     public void checkWinnerColumn(){
       // create test for this
     	Board t = new Board();
-		t.mark(1, 0, 0);
-		t.mark(1, 1, 0);
-		t.mark(1, 2, 0);
-		assertTrue("board should return 'true'", t.check_win(1));
+		t.mark('o', 0, 0);
+		t.mark('o', 1, 0);
+		t.mark('o', 2, 0);
+		assertTrue("board should return 'true'", t.check_win('o'));
     }
 
     @Test
     public void checkWinnerColumnPlayer2(){
       // create test for this
     	Board t = new Board();
-		t.mark(2, 0, 0);
-		t.mark(2, 1, 0);
-		t.mark(2, 2, 0);
-		assertTrue("board should return 'true'", t.check_win(2));
+		t.mark('x', 0, 0);
+		t.mark('x', 1, 0);
+		t.mark('x', 2, 0);
+		assertTrue("board should return 'true'", t.check_win('x'));
     }
     @Test
     public void checkWinnerColumnPlayer2_2(){
       // create test for this
     	Board t = new Board();
-		t.mark(2, 0, 0);
-		t.mark(2, 1, 0);
-		t.mark(2, 2, 0);
-		assertFalse("board should return 'false'", t.check_win(1));
+		t.mark('x', 0, 0);
+		t.mark('x', 1, 0);
+		t.mark('x', 2, 0);
+		assertFalse("board should return 'false'", t.check_win('o'));
     }
 
     @Test
     public void checkWinnerCross(){
       // create test for this
     	Board t = new Board();
-		t.mark(1, 0, 0);
-		t.mark(1, 1, 1);
-		t.mark(1, 2, 2);
-		assertTrue("board should return 'true'", t.check_win(1));
+		t.mark('o', 0, 0);
+		t.mark('o', 1, 1);
+		t.mark('o', 2, 2);
+		assertTrue("board should return 'true'", t.check_win('o'));
     }
 
     // ADD MANY MORE TEST HERE
