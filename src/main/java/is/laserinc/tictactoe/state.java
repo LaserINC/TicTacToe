@@ -4,6 +4,7 @@ public class State {
 	private Board board;
 	private Coordinates cord;
 	public State(Board b, Coordinates c) {
+		
 		this.board = b;
 		this.cord = c;
 	}

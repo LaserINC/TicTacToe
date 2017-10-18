@@ -9,6 +9,7 @@ public class Board {
         	for(int j=0; j<board[i].length; j++) {
         		board[i][j] = 'u';
         	}
+        	
         }
 
 	}

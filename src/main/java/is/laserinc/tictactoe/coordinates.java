@@ -12,6 +12,7 @@ public class Coordinates {
 	}
 
 	public int get_y() {
+		
 		return this.y;
 	}
 
