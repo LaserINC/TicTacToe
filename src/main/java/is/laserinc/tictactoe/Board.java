@@ -7,7 +7,7 @@ public class Board {
 		board = new char[3][3];
 		for(int i=0; i<board.length; i++) {
         	for(int j=0; j<board[i].length; j++) {
-        		board[i][j] = 'u';
+        		board[i][j] = '-';
         	}
         	
         }
@@ -29,7 +29,7 @@ public class Board {
 	}
 
 	public boolean mark(char player, int x, int y) {
-		if(board[x][y] == 'u') {
+		if(board[x][y] == '-') {
 			board[x][y] = player;
 			return true;
 		}
@@ -79,6 +79,14 @@ public class Board {
 		}
 		return win_return;
 	}
+
+	public void PrintBoard() {
+ 		System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2] );
+ 		System.out.println("---------");
+ 		System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2] );
+ 		System.out.println("---------");
+ 		System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2] );
+  	}
 
 	public static void main(String[] args) {
     // CODE HERE
