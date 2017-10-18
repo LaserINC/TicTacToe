@@ -1,16 +1,16 @@
 package is.laserinc.tictactoe;
 
-public class state {
+public class State {
 	private Board board;
 	private Coordinates cord;
-	public state(Board b, Coordinates c) {
+	public State(Board b, Coordinates c) {
 		this.board = b;
 		this.cord = c;
 	}
-	public Board get_board() {
+	public Board getBoard() {
 		return this.board;
 	}
-	public Coordinates get_cord() {
+	public Coordinates getCord() {
 		return this.cord;
 	}
 }

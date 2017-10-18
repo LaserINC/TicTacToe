@@ -13,14 +13,14 @@ public class Computer {
 		this.smart = smart;
 	}
 
-	public Coordinates make_move(Board b) {
+	public Coordinates makeMove(Board b) {
 		if(smart) {
-			return smart_move(b);
+			return smartMove(b);
 		}
-		return random_move(b);
+		return randomMove(b);
 	}
 
-	public Coordinates random_move(Board b) {
+	public Coordinates randomMove(Board b) {
 		boolean move_made = false;
 		while(!move_made) {
 			int move_x = ThreadLocalRandom.current().nextInt(0, 2 + 1);
@@ -34,38 +34,38 @@ public class Computer {
 	}
 
 
-	public Coordinates smart_move(Board b) {
-		Queue<state> states = new LinkedList<state>();//new Queue<state>();
-		states.add(new state(b, null));
+	public Coordinates smartMove(Board b) {
+		Queue<State> States = new LinkedList<State>();//new Queue<State>();
+		States.add(new State(b, null));
 		boolean win = false;
 		boolean first = true;
-		while(states.peek() != null && !win) {
-			state s = states.remove();
+		while(States.peek() != null && !win) {
+			State s = States.remove();
 			for(int i=0; i<3; i++) {
 				for(int j=0; j<3; j++) {
-					state new_state;
+					State new_State;
 					if(first) {
-						new_state = new state(new Board(s.get_board()), new Coordinates(i, j));
+						new_State = new State(new Board(s.getBoard()), new Coordinates(i, j));
 					} else {
-						new_state = new state(new Board(s.get_board()), s.get_cord());
+						new_State = new State(new Board(s.getBoard()), s.getCord());
 					}
-					boolean move_made = new_state.get_board().mark(this.player_char, i, j);
-					if(new_state.get_board().check_win(this.player_char)) {
+					boolean move_made = new_State.getBoard().mark(this.player_char, i, j);
+					if(new_State.getBoard().checkWin(this.player_char)) {
 						win = true;
-						return new_state.get_cord();
+						return new_State.getCord();
 					}
 					if(move_made) {
-						states.add(new_state);
+						States.add(new_State);
 					}
 				}
 			}
 			first = false;
-			if(states.peek() == null) {
+			if(States.peek() == null) {
 				win = true;
-				return random_move(b);
+				return randomMove(b);
 			}
 		}
-		return random_move(b);
+		return randomMove(b);
 
 	}
 

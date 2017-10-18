@@ -15,15 +15,15 @@ public class Board {
 
 	public Board(Board b) {
 		board = new char[3][3];
-		for(int i=0; i<b.get_board().length; i++) {
-        	for(int j=0; j<b.get_board()[i].length; j++) {
-        		this.board[i][j] = b.get_board()[i][j];
+		for(int i=0; i<b.getBoard().length; i++) {
+        	for(int j=0; j<b.getBoard()[i].length; j++) {
+        		this.board[i][j] = b.getBoard()[i][j];
         	}
         }
 		//System.arraycopy(b, 0, this.board, b.length);
 	}
 
-	public char[][] get_board() {
+	public char[][] getBoard() {
 		return this.board;
 	}
 
@@ -35,17 +35,17 @@ public class Board {
 		return false;
 	}
 
-	public char check_win() {
+	public char checkWin() {
 		char return_value = 'u';
-		if(check_win('x')) {
+		if(checkWin('x')) {
 			return_value = 'x';
-		} else if(check_win('o')) {
+		} else if(checkWin('o')) {
 			return_value = 'o';
 		}
 		return return_value;
 	}
 
-	public boolean check_win(char player) {
+	public boolean checkWin(char player) {
 		boolean win_return = false;
 		char value = player;
 		for(int counter = 0; counter<3; counter++) {
@@ -82,7 +82,7 @@ public class Board {
 	public static void main(String[] args) {
     // CODE HERE
 		//TicTacToe t = new TicTacToe();
-		//System.out.println(t.check_win(1));
+		//System.out.println(t.checkWin(1));
 	}
 
 
