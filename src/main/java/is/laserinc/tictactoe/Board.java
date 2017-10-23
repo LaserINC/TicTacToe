@@ -29,6 +29,18 @@ public class Board {
 		return this.board;
 	}
 
+	public boolean canMove() {
+	    for (int i = 0; i < board_size; i++) {
+	        for (int j = 0; j < board_size; j++) {
+	            if (board[i][j] != 'X' && board[i][j] != 'O')
+	            {
+	                return true;
+	            }
+	        }
+	    }
+	    return false;
+	}
+
 	public void FillBoard() {
 		int counter = 0;
 		for(int i = 0; i < board_size; i++) {
@@ -45,6 +57,28 @@ public class Board {
 			return true;
 		}
 		return false;
+	}
+	public void mark2(char player, int x){
+		int counter = 0;
+		if(x >= 0 || x <= board_size) {
+			for(int i = 0; i < board_size; i++) {
+					for(int j = 0; j < board_size; j++) {
+
+
+						if(counter == x){
+							if(board[i][j] != 'x' && board[i][j] != 'o'){
+								board[i][j] = player;
+							}
+							else {
+								System.out.println("Invalid number");
+							}
+						}
+						counter++;
+
+						
+					}
+			}
+		}
 	}
 
 	public char checkWin() {
