@@ -2,6 +2,7 @@ package is.laserinc.tictactoe;
 
 public class Board {
 	private char board[][];
+	private int board_size = 3;
 
 	public Board() {
 		board = new char[3][3];
@@ -9,7 +10,7 @@ public class Board {
         	for(int j=0; j<board[i].length; j++) {
         		board[i][j] = '-';
         	}
-        	
+
         }
 
 	}
@@ -28,8 +29,18 @@ public class Board {
 		return this.board;
 	}
 
+	public void FillBoard() {
+		int counter = 0;
+		for(int i = 0; i < board_size; i++) {
+			for(int j = 0; j < board_size; j++) {
+				char number = Integer.toString(counter).charAt(0);
+				board[i][j] = number;
+				counter++;
+			}
+		}
+	}
 	public boolean mark(char player, int x, int y) {
-		if(board[x][y] == '-') {
+		if(board[x][y] != 'x' && board[x][y] != 'y') {
 			board[x][y] = player;
 			return true;
 		}
@@ -86,14 +97,12 @@ public class Board {
  		System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2] );
  		System.out.println("---------");
  		System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2] );
-  	}
+  }
+	public int ResetGame() {
+		Board t = new Board();
+		return 0;
 
-  	public int ResetGame() {
-  		Board t = new Board();
-  		return 0;
- 		
-  	}
-
+	}
 	public static void main(String[] args) {
     // CODE HERE
 		//TicTacToe t = new TicTacToe();
