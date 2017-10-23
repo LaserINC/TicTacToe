@@ -96,16 +96,14 @@ public class Board {
 
 	public void FillBoard() {
 			int counter = 0;
-			System.out.println( "-------------------------------" );
 			for(int i = 0; i < board_size; i++) {
 				for(int j = 0; j < board_size; j++) {
 					char number = Integer.toString(counter).charAt(0);
-					board[i][j] = 'v';
+					board[i][j] = 'V';
 					counter++;
 				}
-				
+
 			}
-		System.out.println( "-------------------------------" );	
 		}
 
 
