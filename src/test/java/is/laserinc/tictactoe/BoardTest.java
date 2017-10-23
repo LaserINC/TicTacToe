@@ -59,11 +59,10 @@ public class BoardTest {
     }
 
     @Test
-    public void checkResetGame(){
- 
+    public void checkResetGame() { 
         Board t = new Board();
- 
-        assertTrue(" should return '0'", t.ResetGame(1));
+        t.ResetGame();
+        assertEquals(0, t.ResetGame());
     }
     // ADD MANY MORE TEST HERE
 }
