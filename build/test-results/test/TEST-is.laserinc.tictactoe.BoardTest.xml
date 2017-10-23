@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.laserinc.tictactoe.BoardTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-10-23T13:45:20" hostname="LeonidaS" time="0.007">
+<testsuite name="is.laserinc.tictactoe.BoardTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-10-23T14:17:17" hostname="Ghostmedia" time="0.009">
   <properties/>
-  <testcase name="checkWinnerColumn" classname="is.laserinc.tictactoe.BoardTest" time="0.003"/>
+  <testcase name="checkWinnerColumn" classname="is.laserinc.tictactoe.BoardTest" time="0.004"/>
   <testcase name="checkWinnerColumnPlayer2" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <testcase name="checkResetGame" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <testcase name="checkWinnerCross" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
