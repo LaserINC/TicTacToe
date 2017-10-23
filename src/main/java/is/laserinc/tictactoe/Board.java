@@ -99,7 +99,7 @@ public class Board {
 			for(int i = 0; i < board_size; i++) {
 				for(int j = 0; j < board_size; j++) {
 					char number = Integer.toString(counter).charAt(0);
-					board[i][j] = 'Hafdis';
+					board[i][j] = 'V';
 					counter++;
 				}
 
