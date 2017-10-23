@@ -54,7 +54,9 @@ public class TicTacToe {
 				}
 			}
 		} while(GameBoard.canMove() && GameBoard.checkWin() != 'x' && GameBoard.checkWin() != 'o');
-		
+		if(!GameBoard.canMove()){
+			System.out.println("TIE");
+		}
 	}
 
 
