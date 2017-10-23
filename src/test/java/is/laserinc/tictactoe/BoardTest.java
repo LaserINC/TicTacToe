@@ -58,5 +58,11 @@ public class BoardTest {
 		assertTrue("board should return 'true'", t.checkWin('o'));
     }
 
+    @Test
+    public void checkResetGame() { 
+        Board t = new Board();
+        t.ResetGame();
+        assertEquals(0, t.ResetGame());
+    }
     // ADD MANY MORE TEST HERE
 }
