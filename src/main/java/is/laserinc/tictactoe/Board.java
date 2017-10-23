@@ -32,7 +32,7 @@ public class Board {
 	public boolean canMove() {
 	    for (int i = 0; i < board_size; i++) {
 	        for (int j = 0; j < board_size; j++) {
-	            if (board[i][j] != 'X' && board[i][j] != 'O')
+	            if (board[i][j] != 'x' && board[i][j] != 'o')
 	            {
 	                return true;
 	            }
@@ -75,7 +75,7 @@ public class Board {
 						}
 						counter++;
 
-						
+
 					}
 			}
 		}

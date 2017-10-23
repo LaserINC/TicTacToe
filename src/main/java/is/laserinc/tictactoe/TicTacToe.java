@@ -53,8 +53,8 @@ public class TicTacToe {
 					break;
 				}
 			}
-		} while(GameBoard.canMove() || GameBoard.checkWin() != 'x' && GameBoard.checkWin() != 'o');
-
+		} while(GameBoard.canMove() && GameBoard.checkWin() != 'x' && GameBoard.checkWin() != 'o');
+		
 	}
 
 
