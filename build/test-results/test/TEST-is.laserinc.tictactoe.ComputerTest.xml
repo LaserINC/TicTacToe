@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.laserinc.tictactoe.ComputerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-10-23T14:21:49" hostname="LeonidaS" time="0.007">
+<testsuite name="is.laserinc.tictactoe.ComputerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-10-23T14:24:32" hostname="LeonidaS" time="0.01">
   <properties/>
-  <testcase name="make_random_move_correct_2" classname="is.laserinc.tictactoe.ComputerTest" time="0.002"/>
+  <testcase name="make_random_move_correct_2" classname="is.laserinc.tictactoe.ComputerTest" time="0.005"/>
   <testcase name="make_random_move_correct" classname="is.laserinc.tictactoe.ComputerTest" time="0.0"/>
   <testcase name="make_random_move_range" classname="is.laserinc.tictactoe.ComputerTest" time="0.0"/>
   <testcase name="make_smart_move_correct" classname="is.laserinc.tictactoe.ComputerTest" time="0.001"/>

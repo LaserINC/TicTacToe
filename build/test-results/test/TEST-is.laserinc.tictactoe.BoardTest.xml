@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.laserinc.tictactoe.BoardTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-10-23T14:21:49" hostname="LeonidaS" time="0.007">
+<testsuite name="is.laserinc.tictactoe.BoardTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-10-23T14:24:32" hostname="LeonidaS" time="0.009">
   <properties/>
-  <testcase name="checkWinnerColumn" classname="is.laserinc.tictactoe.BoardTest" time="0.004"/>
+  <testcase name="checkWinnerColumn" classname="is.laserinc.tictactoe.BoardTest" time="0.006"/>
   <testcase name="checkWinnerColumnPlayer2" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <testcase name="checkResetGame" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <testcase name="checkWinnerCross" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <testcase name="checkWinnerColumnPlayer2_2" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <testcase name="switchPlayerTest" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
-  <testcase name="checkWinnerRow" classname="is.laserinc.tictactoe.BoardTest" time="0.001"/>
+  <testcase name="checkWinnerRow" classname="is.laserinc.tictactoe.BoardTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
