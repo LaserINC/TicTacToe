@@ -58,7 +58,7 @@ public class Board {
 		}
 		return false;
 	}
-	public void mark2(char player, int x){
+	public boolean mark2(char player, int x){
 		int counter = 0;
 		if(x >= 0 || x <= board_size) {
 			for(int i = 0; i < board_size; i++) {
@@ -68,17 +68,18 @@ public class Board {
 						if(counter == x){
 							if(board[i][j] != 'x' && board[i][j] != 'o'){
 								board[i][j] = player;
+								return true;
 							}
 							else {
-								System.out.println("Invalid number");
+								System.out.println("Number has already been used");
+								return false;
 							}
 						}
 						counter++;
-
-
 					}
 			}
 		}
+		return false;
 	}
 
 	public char checkWin() {
