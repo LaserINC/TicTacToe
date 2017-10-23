@@ -2,7 +2,7 @@ package is.laserinc.tictactoe;
 
 public class TicTacToe {
 	private Board board;
-
+	
 	public TicTacToe() {
 		board = new Board();
 
@@ -22,9 +22,10 @@ public class TicTacToe {
 	}
 
 	public static void main(String[] args) {
-    // CODE HERE
-		//TicTacToe t = new TicTacToe();
-		//VALLI RESET BRANCH
+		TicTacToe Game = new TicTacToe();
+		Board GameBoard = new Board();
+		GameBoard.FillBoard();
+		GameBoard.PrintBoard();
 
 	}
 
