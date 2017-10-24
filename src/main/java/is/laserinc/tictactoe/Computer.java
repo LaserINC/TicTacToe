@@ -1,3 +1,4 @@
+/*
 package is.laserinc.tictactoe;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -70,4 +71,4 @@ public class Computer {
 	}
 
 
-}
+}*/

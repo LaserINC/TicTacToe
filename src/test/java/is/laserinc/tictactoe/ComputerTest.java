@@ -1,4 +1,4 @@
-package is.laserinc.tictactoe;
+/*package is.laserinc.tictactoe;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -77,3 +77,4 @@ public class ComputerTest {
         assertTrue("Cordinates within range", (cord.get_x() == 0 && cord.get_y() == 2));
     }
 }
+*/
