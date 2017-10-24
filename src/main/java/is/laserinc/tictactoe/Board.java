@@ -33,13 +33,13 @@ public class Board {
 	// if marking succedes, else false if the 
 	// place has already been marked.
 	public boolean mark(char player, int x) {
-		int counter = 0;
+		int counter = 1;
 		if(x >= 0 || x <= boardSize) {
 			for(int i = 0; i < boardSize; i++) {
 				for(int j = 0; j < boardSize; j++) {
 					// If place in board is found, it is marked by the player
 					// making the move.
-					if(counter == x - 1){
+					if(counter == x){
 						if(board[i][j] != 'x' && board[i][j] != 'o') {
 							board[i][j] = player;
 							return true;
