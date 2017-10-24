@@ -2,48 +2,14 @@ package is.laserinc.tictactoe;
 
 public class Board {
 	private char board[][];
-	private int board_size = 3;
+	private int boardSize = 3;
 
+	// Initialize new board of size 3x3.
 	public Board() {
 		board = new char[3][3];
-		for(int i=0; i<board.length; i++) {
-        	for(int j=0; j<board[i].length; j++) {
-        		board[i][j] = '-';
-        	}
-        }
-
-	}
-
-	public Board(Board b) {
-		board = new char[3][3];
-		for(int i=0; i<b.getBoard().length; i++) {
-        	for(int j=0; j<b.getBoard()[i].length; j++) {
-        		this.board[i][j] = b.getBoard()[i][j];
-        	}
-        }
-		//System.arraycopy(b, 0, this.board, b.length);
-	}
-
-	public char[][] getBoard() {
-		return this.board;
-	}
-
-	public boolean canMove() {
-	    for (int i = 0; i < board_size; i++) {
-	        for (int j = 0; j < board_size; j++) {
-	            if (board[i][j] != 'x' && board[i][j] != 'o')
-	            {
-	                return true;
-	            }
-	        }
-	    }
-	    return false;
-	}
-
-	public void FillBoard() {
-		int counter = 0;
-		for(int i = 0; i < board_size; i++) {
-			for(int j = 0; j < board_size; j++) {
+		int counter = 1;
+		for(int i = 0; i < boardSize; i++) {
+			for(int j = 0; j < boardSize; j++) {
 				char number = Integer.toString(counter).charAt(0);
 				board[i][j] = number;
 				counter++;
@@ -51,42 +17,64 @@ public class Board {
 		}
 	}
 
-	public boolean mark(char player, int x){
+	// Check if board is full or not.
+	public boolean canMove() {
+		for (int i = 0; i < boardSize; i++) {
+	    	for (int j = 0; j < boardSize; j++) {
+	        	if (board[i][j] != 'x' && board[i][j] != 'o') {
+	            	return true;
+	            }
+	        }
+	    }
+	    return false;
+	}
+
+	// Mark place in board, choosen by player. Returns true
+	// if marking succedes, else false if the 
+	// place has already been marked.
+	public boolean mark(char player, int x) {
 		int counter = 0;
-		if(x >= 0 || x <= board_size) {
-			for(int i = 0; i < board_size; i++) {
-					for(int j = 0; j < board_size; j++) {
-						if(counter == x){
-							if(board[i][j] != 'x' && board[i][j] != 'o'){
-								board[i][j] = player;
-								return true;
-							}
-							else {
-								System.out.println("Number has already been used");
-								return false;
-							}
+		if(x >= 0 || x <= boardSize) {
+			for(int i = 0; i < boardSize; i++) {
+				for(int j = 0; j < boardSize; j++) {
+					// If place in board is found, it is marked by the player
+					// making the move.
+					if(counter == x - 1){
+						if(board[i][j] != 'x' && board[i][j] != 'o') {
+							board[i][j] = player;
+							return true;
 						}
-						counter++;
+						else {
+							System.out.println("Number has already been used");
+							return false;
+						}
 					}
+					counter++;
+				}
 			}
 		}
 		return false;
 	}
 
+	// Check if either player has won.
+	// Return player('x' or 'u') who won, else return 'u' if no one won.
 	public char checkWin() {
-		char return_value = 'u';
+		char returnValue = 'u';
+		
 		if(checkWin('x')) {
-			return_value = 'x';
+			returnValue = 'x';
 		} else if(checkWin('o')) {
-			return_value = 'o';
+			returnValue = 'o';
 		}
-		return return_value;
+
+		return returnValue;
 	}
 
 	public boolean checkWin(char player) {
-		boolean win_return = false;
+		boolean winReturn = false;
 		char value = player;
-		for(int counter = 0; counter<3; counter++) {
+		
+		for(int counter = 0; counter < 3; counter++) {
 			boolean win = true;
 			for(int i : board[counter]) {
 				if(i != value) {
@@ -94,47 +82,43 @@ public class Board {
 				}
 			}
 			if(win) {
-				win_return = true;
+				winReturn = true;
 			}
 		}
-		for(int counter = 0; counter<3; counter++) {
+		for(int counter = 0; counter < 3; counter++) {
 			boolean win = true;
-			for(int i = 0; i<3; i++) {
+			for(int i = 0; i < 3; i++) {
 				if(board[i][counter] != value) {
 					win = false;
 				}
 			}
 			if(win) {
-				win_return = true;
+				winReturn = true;
 			}
 		}
+
 		if(board[0][0] == value && board[1][1] == value && board[2][2] == value) {
-			win_return = true;
+			winReturn = true;
 		}
+
 		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
-			win_return = true;
+			winReturn = true;
 		}
-		return win_return;
+
+		return winReturn;
 	}
 
 	public void PrintBoard() {
-		System.out.println("\n");
  		System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2] );
  		System.out.println("---------");
  		System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2] );
  		System.out.println("---------");
  		System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2] );
-  }
+  	}
+
 	public int ResetGame() {
 		Board t = new Board();
 		return 0;
 	}
-	public static void main(String[] args) {
-    // CODE HERE
-		//TicTacToe t = new TicTacToe();
-		//System.out.println(t.checkWin(1));
-	}
-
-
 
 }

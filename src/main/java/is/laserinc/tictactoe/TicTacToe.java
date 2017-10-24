@@ -12,7 +12,6 @@ public class TicTacToe {
 		Player player = new Player(player_x);
 
 		//FILL BOARD WITH VALUES 0-8 AND THEN PRINT THE BOARD
-		GameBoard.FillBoard();
 		GameBoard.PrintBoard();
 
 		do {
