@@ -10,7 +10,7 @@ public class Board {
 		initializeBoard();
 	}
 
-	private void initializeBoard() {
+	public void initializeBoard() {
 		int counter = 1;
 		for(int i = 0; i < boardSize; i++) {
 			for(int j = 0; j < boardSize; j++) {
