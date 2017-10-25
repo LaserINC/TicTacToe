@@ -42,9 +42,9 @@ public class TicTacToe {
 			while(player.currentPlayer() == playerX)
 			{
 				System.out.println("X Pick a number");
-				char number = scanner.next().charAt(0);
+				int number = scanner.nextInt();
 
-				if(gameBoard.mark(player.currentPlayer(), (int)number)){
+				if(gameBoard.mark(player.currentPlayer(), number)){
 					gameBoard.printBoard();
 					gameBoard.checkWin();
 					if(gameBoard.checkWin() == player.currentPlayer()){
@@ -64,8 +64,8 @@ public class TicTacToe {
 				{
 					System.out.println("O Pick a number");
 					Scanner scanner2 = new Scanner(System.in);
-					char number2 = scanner2.next().charAt(0);
-					if(gameBoard.mark(player.currentPlayer(), (int)number2)) {
+					int number2 = scanner.nextInt();
+					if(gameBoard.mark(player.currentPlayer(), number2)) {
 						gameBoard.printBoard();
 						gameBoard.checkWin();
 						if(gameBoard.checkWin() == player.currentPlayer()){
