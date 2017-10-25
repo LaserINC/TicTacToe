@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BoardTest {
-    // TESTS FOR FUNCTION: initializeBoard() 
+    // TESTS FOR FUNCTION: initializeBoard()
     // TESTS FOR FUNCTION: canMove()
     // TESTS FOR FUNCTION: mark(char player, int x) 
     
@@ -37,7 +37,15 @@ public class BoardTest {
     }
 
 
-    // TESTS FOR FUNCTION: CheckWin(char player) 
+    // TESTS FOR FUNCTION: CheckWin(char player)
+    @Test
+    public void checkInitializeBoard(){
+      Board board = new Board();
+      board.initializeBoard();
+      char board2[][] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+      assertArrayEquals(board.getBoard(), board2);
+    }
+
     @Test
     public void checkWinnerRow(){
     	Board t = new Board();
@@ -106,7 +114,7 @@ public class BoardTest {
 
     // TESTS FOR FUNCTION: printBoard()
 
-    // TESTS FOR FUNCTION: resetGame() 
+    // TESTS FOR FUNCTION: resetGame()
     @Test
     public void checkResetGame() {
         Board t = new Board();
