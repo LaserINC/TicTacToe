@@ -5,6 +5,14 @@ import static org.junit.Assert.*;
 
 public class BoardTest {
     // TESTS FOR FUNCTION: initializeBoard()
+    @Test
+    public void checkInitializeBoard(){
+      Board board = new Board();
+      board.initializeBoard();
+      char board2[][] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+      assertArrayEquals(board.getBoard(), board2);
+    }
+
     // TESTS FOR FUNCTION: canMove()
     // TESTS FOR FUNCTION: mark(char player, int x) 
     
@@ -38,14 +46,6 @@ public class BoardTest {
 
 
     // TESTS FOR FUNCTION: CheckWin(char player)
-    @Test
-    public void checkInitializeBoard(){
-      Board board = new Board();
-      board.initializeBoard();
-      char board2[][] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
-      assertArrayEquals(board.getBoard(), board2);
-    }
-
     @Test
     public void checkWinnerRow(){
     	Board t = new Board();
@@ -117,9 +117,14 @@ public class BoardTest {
     // TESTS FOR FUNCTION: resetGame()
     @Test
     public void checkResetGame() {
-        Board t = new Board();
-        t.resetGame();
-        assertEquals(0, t.resetGame());
+    	Board board = new Board();
+      	board.initializeBoard();
+      	board.mark('x', 1);
+      	board.mark('o', 4);
+      	board.mark('x', 7);
+      	char board2[][] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+      	board.resetGame();
+      	assertArrayEquals(board.getBoard(), board2);
     }
 
 }
