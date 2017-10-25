@@ -10,7 +10,7 @@ public class Board {
 		initializeBoard();
 	}
 
-	private void initializeBoard() {
+	public void initializeBoard() {
 		int counter = 1;
 		for(int i = 0; i < boardSize; i++) {
 			for(int j = 0; j < boardSize; j++) {
@@ -19,6 +19,9 @@ public class Board {
 				counter++;
 			}
 		}
+	}
+	public char[][] getBoard() {
+		return board;
 	}
 
 	// Check if board is full or not.
@@ -34,7 +37,7 @@ public class Board {
 	}
 
 	// Mark place in board, choosen by player. Returns true
-	// if marking succedes, else false if the 
+	// if marking succedes, else false if the
 	// place has already been marked.
 	public boolean mark(char player, int x) {
 		int counter = 1;
@@ -64,7 +67,7 @@ public class Board {
 	// Return player('x' or 'u') who won, else return 'u' if no one won.
 	public char checkWin() {
 		char returnValue = 'u';
-		
+
 		if(checkWin('x')) {
 			returnValue = 'x';
 		} else if(checkWin('o')) {
@@ -77,7 +80,7 @@ public class Board {
 	public boolean checkWin(char player) {
 		boolean winReturn = false;
 		char value = player;
-		
+
 		for(int counter = 0; counter < 3; counter++) {
 			boolean win = true;
 			for(int i : board[counter]) {
