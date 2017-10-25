@@ -10,13 +10,12 @@ public class Player {
     public char currentPlayer() {
         return this.player;
     }
-    
+
     // Change player to other player.
     public void changeToPlayer(char changeTo) {
         if(changeTo == 'x' || changeTo == 'o') {
             this.player = changeTo;
+        }
     }
-  
-  }
 
 }

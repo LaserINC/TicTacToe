@@ -19,6 +19,13 @@ public class BoardTest {
     }
 
     @Test
+    public void checkPrintBoard(){
+      Board board = new Board();
+      board.mark('x', 5);
+      assertEquals('x', board.getBoardPrintBoard('5', 'x'));
+    }
+
+    @Test
     public void checkWinnerRow(){
     	Board t = new Board();
     	t.mark('x', 1);

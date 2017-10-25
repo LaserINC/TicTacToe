@@ -20,8 +20,26 @@ public class Board {
 			}
 		}
 	}
+
 	public char[][] getBoard() {
-		return board;
+			return this.board;
+	}
+
+	public char getBoardPrintBoard(char boardValue, char value) {
+		int counter = 1;
+		for(int i = 0; i < boardSize; i++) {
+			for(int j = 0; j < boardSize; j++) {
+				char number = Integer.toString(counter).charAt(0);
+				if(number == boardValue){
+					if(board[i][j] == value) {
+						return value;
+					}
+				}
+				counter++;
+			}
+
+		}
+		return '0';
 	}
 
 	// Check if board is full or not.
