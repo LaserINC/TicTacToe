@@ -134,4 +134,74 @@ public class BoardTest {
       	assertArrayEquals(board.getBoard(), board2);
     }
 
+    @Test
+    public void checkCanMove(){
+        Board t = new Board();
+        t.initializeBoard();
+        assertTrue("PLayer can move",  t.canMove());
+    }
+
+    @Test
+    public void checkFullBoard(){
+        Board t = new Board();
+        t.mark('o', 1);
+        t.mark('x', 2);
+        t.mark('o', 3);
+        t.mark('x', 4);
+        t.mark('o', 5);
+        t.mark('x', 6);
+        t.mark('o', 7);
+        t.mark('x', 8);
+        t.mark('o', 9);
+        assertFalse("player can not move", t.canMove());
+    }
+
+
+    @Test
+    public void checkMark1() {
+        Board t = new Board();
+        t.mark('x', 1);
+        t.mark('x', 2);
+        assertTrue("should return 'true'", t.mark('x',3));
+    }
+
+    @Test
+    public void checkMark2() {
+        Board t = new Board();
+        t.mark('x', 1);
+        t.mark('x', 2);
+        assertTrue("should return 'true'", t.mark('x',4));
+    }
+
+    @Test
+    public void checkMark3() {
+        Board t = new Board();
+        t.mark('x', 1);
+        t.mark('x', 2);
+        assertFalse("should return 'false'", t.mark('x',1));
+    }
+
+    @Test
+    public void checkMark4() {
+        Board t = new Board();
+        t.mark('x', 1);
+        t.mark('x', 2);
+        assertFalse("should return 'false'", t.mark('x',2));
+    }
+
+    @Test
+    public void checkMark5() {
+        Board t = new Board();
+        t.mark('o', 1);
+        t.mark('o', 2);
+        assertFalse("should return 'false'", t.mark('x',1));
+    }
+
+    @Test
+    public void checkMark6() {
+        Board t = new Board();
+        t.mark('o', 1);
+        t.mark('o', 2);
+        assertFalse("should return 'false'", t.mark('x',2));
+    }    
 }
