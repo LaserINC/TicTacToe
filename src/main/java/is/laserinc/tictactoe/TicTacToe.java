@@ -1,57 +1,98 @@
 package is.laserinc.tictactoe;
+import java.util.*;
 
 public class TicTacToe {
-	private int board[][];
+	private Board gameBoard;
+	private char playerX = 'x';
+	private char playerO = 'o';
 
-	public TicTacToe() {
-		board = new int[3][3];
-
+	TicTacToe() {
+		// Create new initialized instance of board.
+		gameBoard = new Board();
 	}
 
-	public void mark(int player, int x, int y) {
-		board[x][y] = player;
+	// Ask user at end of each game, if he wants to play
+	// a new one.
+	private void askIfNewGame() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("New game?[Y/N]");
+		char answer = scanner.next().charAt(0);
+
+		if(answer == 'y' || answer == 'Y') {
+			gameBoard.resetGame();
+			playGame();
+		}
+		else if(answer == 'n' || answer == 'N'){
+			return;
+		}
+		else {
+			System.out.println("Invalid input!");
+			askIfNewGame();
+		}
 	}
 
-	public boolean check_win(int player) {
-		boolean win_return = false;
-		int value = player;
-		for(int counter = 0; counter<3; counter++) {
-			boolean win = true;
-			for(int i : board[counter]) {
-				if(i != value) {
-					win = false;
+	public void playGame() {
+		Scanner scanner = new Scanner(System.in);
+		gameBoard.printBoard();
+
+		Player player = new Player(playerX);
+
+		do {
+			// While user has not inserted a valid input.
+			while(player.currentPlayer() == playerX)
+			{
+				System.out.println("X Pick a number");
+				char number = scanner.next().charAt(0);
+
+				if(gameBoard.mark(player.currentPlayer(), (int)number)){
+					gameBoard.printBoard();
+					gameBoard.checkWin();
+					if(gameBoard.checkWin() == player.currentPlayer()){
+						System.out.println("Winner is X!");
+						break;
+					}
+					player.changeToPlayer(playerO);
+				}
+				else {
+					System.out.println("Invalid input! Pick another number.");
 				}
 			}
-			if(win) {
-				win_return = true;
-			}
-		}
-		for(int counter = 0; counter<3; counter++) {
-			boolean win = true;
-			for(int i = 0; i<3; i++) {
-				if(board[i][counter] != value) {
-					win = false;
+
+			// If board is not full then next player can move.
+			if(gameBoard.canMove()) {
+				while(player.currentPlayer() == playerO)
+				{
+					System.out.println("O Pick a number");
+					Scanner scanner2 = new Scanner(System.in);
+					char number2 = scanner2.next().charAt(0);
+					if(gameBoard.mark(player.currentPlayer(), (int)number2)) {
+						gameBoard.printBoard();
+						gameBoard.checkWin();
+						if(gameBoard.checkWin() == player.currentPlayer()){
+							System.out.println("Winner is O!");
+							break;
+						}
+						player.changeToPlayer(playerX);
+					}
+					else {
+						System.out.println("Invalid input! Pick another number.");
+					}
 				}
 			}
-			if(win) {
-				win_return = true;
-			}
+
+		}while(gameBoard.canMove() && gameBoard.checkWin() != playerX && gameBoard.checkWin() != playerO);
+
+		// If no one can make a move. All numbers have been picked
+		// and the game ended in a tie.
+		if(!gameBoard.canMove()){
+			System.out.println("It's a tie!");
 		}
-		if(board[0][0] == value && board[1][1] == value && board[2][2] == value) {
-			win_return = true;
-		}
-		if(board[2][0] == value && board [1][1] == value && board[0][2] == value) {
-			win_return = true;
-		}
-		return win_return;
+
+		askIfNewGame();
 	}
 
 	public static void main(String[] args) {
-    // CODE HERE
-		//TicTacToe t = new TicTacToe();
-		//System.out.println(t.check_win(1));
+		TicTacToe game = new TicTacToe();
+		game.playGame();
 	}
-
-
-
 }

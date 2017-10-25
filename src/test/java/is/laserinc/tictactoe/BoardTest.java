@@ -4,59 +4,65 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BoardTest {
-    @Test
-    public void switchPlayerTest(){
-      // create test for this
-    }
+    // TESTS FOR FUNCTION: initializeBoard() 
+    // TESTS FOR FUNCTION: canMove()
+    // TESTS FOR FUNCTION: mark(char player, int x) 
+    // TESTS FOR FUNCTION: checkWin()
 
+    // TESTS FOR FUNCTION: CheckWin(char player) 
     @Test
     public void checkWinnerRow(){
-      // create test for this
-    	TicTacToe t = new TicTacToe();
-		t.mark(1, 0, 0);
-		t.mark(1, 0, 1);
-		t.mark(1, 0, 2);
-		assertTrue("tictactoe should return 'true'", t.check_win(1));
+    	Board t = new Board();
+    	t.mark('x', 1);
+    	t.mark('x', 2);
+    	t.mark('x', 3);
+    	assertTrue("board should return 'true'", t.checkWin('x'));
     }
 
     @Test
     public void checkWinnerColumn(){
-      // create test for this
-    	TicTacToe t = new TicTacToe();
-		t.mark(1, 0, 0);
-		t.mark(1, 1, 0);
-		t.mark(1, 2, 0);
-		assertTrue("tictactoe should return 'true'", t.check_win(1));
+    	Board t = new Board();
+    	t.mark('o', 1);
+    	t.mark('o', 4);
+    	t.mark('o', 7);
+    	assertTrue("board should return 'true'", t.checkWin('o'));
     }
 
     @Test
-    public void checkWinnerColumn_player2(){
-      // create test for this
-    	TicTacToe t = new TicTacToe();
-		t.mark(2, 0, 0);
-		t.mark(2, 1, 0);
-		t.mark(2, 2, 0);
-		assertTrue("tictactoe should return 'true'", t.check_win(2));
+    public void checkWinnerColumnPlayer2(){
+    	Board t = new Board();
+    	t.mark('x', 1);
+    	t.mark('x', 4);
+    	t.mark('x', 7);
+    	assertTrue("board should return 'true'", t.checkWin('x'));
     }
+
     @Test
-    public void checkWinnerColumn_player2_2(){
-      // create test for this
-    	TicTacToe t = new TicTacToe();
-		t.mark(2, 0, 0);
-		t.mark(2, 1, 0);
-		t.mark(2, 2, 0);
-		assertFalse("tictactoe should return 'false'", t.check_win(1));
+    public void checkWinnerColumnPlayer2_2(){
+    	Board t = new Board();
+    	t.mark('x', 1);
+    	t.mark('x', 4);
+    	t.mark('x', 7);
+    	assertFalse("board should return 'false'", t.checkWin('o'));
     }
 
     @Test
     public void checkWinnerCross(){
-      // create test for this
-    	TicTacToe t = new TicTacToe();
-		t.mark(1, 0, 0);
-		t.mark(1, 1, 1);
-		t.mark(1, 2, 2);
-		assertTrue("tictactoe should return 'true'", t.check_win(1));
+    	Board t = new Board();
+    	t.mark('o', 1);
+    	t.mark('o', 5);
+    	t.mark('o', 9);
+    	assertTrue("board should return 'true'", t.checkWin('o'));
     }
 
-    // ADD MANY MORE TEST HERE
+    // TESTS FOR FUNCTION: printBoard()
+
+    // TESTS FOR FUNCTION: resetGame() 
+    @Test
+    public void checkResetGame() {
+        Board t = new Board();
+        t.resetGame();
+        assertEquals(0, t.resetGame());
+    }
+
 }
