@@ -65,4 +65,26 @@ public class BoardTest {
         assertEquals(0, t.resetGame());
     }
 
+    @Test
+    public void checkCanMove(){
+        Board t = new Board();
+        t.initializeBoard();
+        assertTrue("PLayer can move",  t.canMove());
+    }
+
+    @Test
+    public void checkFullBoard(){
+        Board t = new Board();
+        t.mark('o', 1);
+        t.mark('x', 2);
+        t.mark('o', 3);
+        t.mark('x', 4);
+        t.mark('o', 5);
+        t.mark('x', 6);
+        t.mark('o', 7);
+        t.mark('x', 8);
+        t.mark('o', 9);
+        assertFalse("player can not move", t.canMove());
+    }
+
 }
