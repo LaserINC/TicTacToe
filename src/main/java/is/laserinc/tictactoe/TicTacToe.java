@@ -7,7 +7,7 @@ public class TicTacToe {
 		board = new Board();
 
 	}
-
+	//play game
 	public void game() {
 		int interlope = 0;
 		while(board.checkWin() == 'u') {
